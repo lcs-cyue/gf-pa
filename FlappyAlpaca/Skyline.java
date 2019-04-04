@@ -30,34 +30,57 @@ public class Skyline extends World
         //add it into the skyline world
         addObject(RJ,85,200);
 
-    }
-    public void act() {
-        counter++;
 
-        if (counter == 80) {
-            //add cloud every count to 80
+    }
+
+    public void act() {
+        // Increment counter (roughly 60 counts per second)
+        counter = counter + 1;
+
+        if (counter % 40 == 0) {
+
+            // debug
+            //showText("added a cloud", 100, 100);
+
+            //add cloud every 0.67 second
             Cloud cloudObject = new Cloud();
 
             GreenfootImage image = cloudObject.getImage();
 
             addObject(new Cloud(),600,Greenfoot.getRandomNumber(550)-50);
-            counter = 0;
 
-            
+
         }
-
             
-        if (counter == 300) {
-            //add clover every count to 100
+        if (counter % 120 == 0) {
+            //add clover every 2 second
             Clover cloverObject = new Clover();
 
             GreenfootImage image = cloverObject.getImage();
 
             addObject(new Clover(),Greenfoot.getRandomNumber(600)-0,Greenfoot.getRandomNumber(600)-0);
-            counter = 0;
 
             
         }
+
+        // Every 60 frames, update the time
+        if ((counter % 60) == 0)
+        {
+            String timeElapsed = Integer.toString(counter / 60);
+            showText(timeElapsed, 100, 100);
+
+            
+        }
+        
+        //win after 30 seconds
+        if ((counter % 1800) == 0)
+        {
+            Win Hahaha = new Win();
+            addObject(Hahaha,300,200);
+            Greenfoot.stop();
+
+        }
+
     }
 
 }
