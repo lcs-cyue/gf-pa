@@ -18,4 +18,15 @@ public class Cloud extends Actor
       setLocation (getX()-4, getY());
            
     }    
+    
+    private void avoid() 
+    {
+        //avoid overlapping with the cloud and getting out of the boundaries
+        if( isAtEdge())
+        {
+            
+           turn(Greenfoot.getRandomNumber(360)); 
+          
+        }
+    }
 }

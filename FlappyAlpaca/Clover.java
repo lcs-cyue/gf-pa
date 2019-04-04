@@ -8,12 +8,31 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Clover extends Actor
 {
-    /**
-     * Act - do whatever the Clover wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    
     public void act() 
     {
         setLocation (getX()-4, getY());
-    }    
+    } 
+    
+    private void avoid () {
+        
+        //avoid overlapping with the cloud and getting out of the boundaries
+        if( isAtEdge())
+        {
+           turn(Greenfoot.getRandomNumber(360)); 
+           
+           
+        }
+        
+        if( isTouching(Cloud.class))
+        {
+           turn(Greenfoot.getRandomNumber(360)); 
+           
+           
+        }
+    }
+    
+    
+   
+        
 }

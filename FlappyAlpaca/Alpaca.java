@@ -10,39 +10,48 @@ public class Alpaca extends Actor
 {
     int dy = 0;
     int g = 1;
+    int counter = 0;
     /**
      * Act - do whatever the Alpaca wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() 
     {
-         // Game over if bumps into a cloud, 
+        counter = counter + 1;
+        // Game over if bumps into a cloud, 
         if (getOneIntersectingObject (Cloud.class) != null) {
-           
+
             displayGameOver ();
-            
+
         }
-        
+
         setLocation( getX(), getY() + dy);
-        
+
         //launch RJ upwards when pressing space bar
         if (Greenfoot. isKeyDown("space") ==true) {
             dy = -8;
         }
-        
+
         if (getY() > getWorld().getHeight() ) {
-            
+
             displayGameOver ();
-            
+
+        }
+
+        if (getY() < -20 ) {
+
+            displayGameOver ();
+
         }
         
-        if (getY() < -15 ) {
-            
-            displayGameOver ();
-            
+        if (isTouching(Clover.class))
+        {
+            removeTouching(Clover.class);
         }
+   
         dy = dy + g;
     }    
+
     
     private void displayGameOver () {
         GameOver gameOver = new GameOver();

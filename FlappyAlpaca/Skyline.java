@@ -10,7 +10,8 @@ public class Skyline extends World
 {
     int counter = 0;
     GreenfootSound backgroundMusic;
-
+    
+    
     /**
      * Constructor for objects of class Skyline.
      * 
@@ -37,12 +38,13 @@ public class Skyline extends World
         // Increment counter (roughly 60 counts per second)
         counter = counter + 1;
 
-        if (counter % 40 == 0) {
+        
+        if (counter % 100 == 0) {
 
             // debug
             //showText("added a cloud", 100, 100);
 
-            //add cloud every 0.67 second
+            //add cloud every 1.67 second
             Cloud cloudObject = new Cloud();
 
             GreenfootImage image = cloudObject.getImage();
@@ -51,6 +53,8 @@ public class Skyline extends World
 
 
         }
+        
+         
             
         if (counter % 120 == 0) {
             //add clover every 2 second
@@ -62,18 +66,18 @@ public class Skyline extends World
 
             
         }
-
+ 
         // Every 60 frames, update the time
         if ((counter % 60) == 0)
         {
             String timeElapsed = Integer.toString(counter / 60);
-            showText(timeElapsed, 100, 100);
+            showText(timeElapsed, 50, 370);
 
             
         }
         
-        //win after 30 seconds
-        if ((counter % 1800) == 0)
+        //I've changed winning the game after 60 seconds since it's not that challenging
+        if ((counter % 3600) == 0)
         {
             Win Hahaha = new Win();
             addObject(Hahaha,300,200);
@@ -82,5 +86,7 @@ public class Skyline extends World
         }
 
     }
+    
+    
 
 }
