@@ -5,8 +5,8 @@ import java.awt.Color;
  * 
  * @author (your name) 
  * @version (a version number or a date)
- */
-public class Counter extends Actor
+ */   
+public class Score extends Actor
 {
     int score = 0;
     /**
@@ -15,6 +15,12 @@ public class Counter extends Actor
      */
     public void act() 
     {
-        // Add your action code here.
-    }    
+        setImage(new GreenfootImage("Score : " + score, 24, greenfoot.Color.BLACK, greenfoot.Color.WHITE));
+    }  
+    
+    public void addScore()
+    {
+        score++;
+    }
+    
 }

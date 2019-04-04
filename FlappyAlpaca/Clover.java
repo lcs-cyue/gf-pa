@@ -21,13 +21,11 @@ public class Clover extends Actor
         {
            turn(Greenfoot.getRandomNumber(360)); 
            
-           
         }
         
         if( isTouching(Cloud.class))
         {
            turn(Greenfoot.getRandomNumber(360)); 
-           
            
         }
     }

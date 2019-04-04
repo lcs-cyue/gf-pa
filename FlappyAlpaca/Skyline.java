@@ -10,7 +10,7 @@ public class Skyline extends World
 {
     int counter = 0;
     GreenfootSound backgroundMusic;
-    
+    Score score = new Score();
     
     /**
      * Constructor for objects of class Skyline.
@@ -30,8 +30,9 @@ public class Skyline extends World
 
         //add it into the skyline world
         addObject(RJ,85,200);
-
-
+        
+        //add score counter
+        addObject(score, 100, 40);
     }
 
     public void act() {
@@ -55,7 +56,7 @@ public class Skyline extends World
         }
         
          
-            
+             
         if (counter % 120 == 0) {
             //add clover every 2 second
             Clover cloverObject = new Clover();
@@ -85,6 +86,11 @@ public class Skyline extends World
 
         }
 
+    }
+    
+    public Score getScore()
+    {
+        return score;
     }
     
     

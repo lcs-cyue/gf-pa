@@ -47,6 +47,10 @@ public class Alpaca extends Actor
         if (isTouching(Clover.class))
         {
             removeTouching(Clover.class);
+            //create counter
+            Skyline skyline = (Skyline)getWorld();
+            Score score = skyline.getScore();
+            score.addScore();
         }
    
         dy = dy + g;
