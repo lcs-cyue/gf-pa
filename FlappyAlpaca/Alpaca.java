@@ -11,6 +11,7 @@ public class Alpaca extends Actor
     int dy = 0;
     int g = 1;
     int counter = 0;
+    
     /**
      * Act - do whatever the Alpaca wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -51,6 +52,7 @@ public class Alpaca extends Actor
             Skyline skyline = (Skyline)getWorld();
             Score score = skyline.getScore();
             score.addScore();
+            //Greenfoot.playSound("2.wav");
         }
    
         dy = dy + g;

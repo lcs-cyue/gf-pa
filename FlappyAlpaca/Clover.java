@@ -12,24 +12,21 @@ public class Clover extends Actor
     public void act() 
     {
         setLocation (getX()-4, getY());
-    } 
-    
-    private void avoid () {
+        
         
         //avoid overlapping with the cloud and getting out of the boundaries
         if( isAtEdge())
         {
-           turn(Greenfoot.getRandomNumber(360)); 
+           removeTouching(Clover.class);
            
         }
         
         if( isTouching(Cloud.class))
         {
-           turn(Greenfoot.getRandomNumber(360)); 
+           removeTouching(Clover.class); 
            
         }
-    }
-    
+    } 
     
    
         

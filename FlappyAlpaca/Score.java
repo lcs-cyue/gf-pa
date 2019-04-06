@@ -1,5 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-import java.awt.Color;
+
 /**
  * Write a description of class Counter here.
  * 
@@ -9,6 +9,7 @@ import java.awt.Color;
 public class Score extends Actor
 {
     int score = 0;
+    //add 1 point if RJ eats a clover (it was originally 5 points but I changed it)
     /**
      * Act - do whatever the Counter wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.

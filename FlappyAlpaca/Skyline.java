@@ -76,7 +76,7 @@ public class Skyline extends World
 
             
         }
-        
+         
         //I've changed winning the game after 60 seconds since it's not that challenging
         if ((counter % 3600) == 0)
         {
