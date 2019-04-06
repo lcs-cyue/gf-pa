@@ -29,7 +29,7 @@ public class Skyline extends World
         Alpaca RJ = new Alpaca();
 
         //add it into the skyline world
-        addObject(RJ,85,200);
+        addObject(RJ,85,100);
         
         //add score counter
         addObject(score, 100, 40);

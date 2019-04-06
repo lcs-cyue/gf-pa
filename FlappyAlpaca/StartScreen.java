@@ -27,4 +27,11 @@ public class StartScreen extends World
         Letters titleLetters= new Letters();
         addObject (titleLetters, 400, 300);
     }
+    
+    public void act()
+    {
+        //set the world after pressing enter
+        if (Greenfoot.isKeyDown ("enter"))
+        Greenfoot.setWorld(new Skyline());
+    }
 }
