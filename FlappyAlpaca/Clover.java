@@ -9,6 +9,21 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Clover extends Actor
 {
     
+    /**
+     * Constructor
+     * 
+     * Runs once
+     */
+    Clover()
+    {
+        // Check if touching a cloud
+        
+            // If touching cloud, generate a new position
+            // (OR, just remove the clover)
+            
+        
+    }
+    
     public void act() 
     {
         setLocation (getX()-4, getY());
@@ -23,9 +38,11 @@ public class Clover extends Actor
         
         if( isTouching(Cloud.class))
         {
-           removeTouching(Clover.class); 
-           
+            
+            getWorld().removeObject(this);
+            
         }
+      
     } 
     
    

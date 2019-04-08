@@ -29,6 +29,7 @@ public class Skyline extends World
         Alpaca RJ = new Alpaca();
 
         //add it into the skyline world
+        
         addObject(RJ,85,100);
         
         //add score counter
@@ -38,10 +39,11 @@ public class Skyline extends World
     public void act() {
         // Increment counter (roughly 60 counts per second)
         counter = counter + 1;
-
         
-        if (counter % 100 == 0) {
-
+        Greenfoot.delay(5);
+        
+        if (counter % 100 == 0) 
+        {
             // debug
             //showText("added a cloud", 100, 100);
 
@@ -51,32 +53,26 @@ public class Skyline extends World
             GreenfootImage image = cloudObject.getImage();
 
             addObject(new Cloud(),600,Greenfoot.getRandomNumber(550)-50);
-
-
+            
         }
-        
-         
-             
-        if (counter % 120 == 0) {
+
+        if (counter % 120 == 0) 
+        {
             //add clover every 2 second
             Clover cloverObject = new Clover();
 
             GreenfootImage image = cloverObject.getImage();
 
             addObject(new Clover(),Greenfoot.getRandomNumber(600)-0,Greenfoot.getRandomNumber(600)-0);
-
             
         }
- 
         // Every 60 frames, update the time
         if ((counter % 60) == 0)
         {
             String timeElapsed = Integer.toString(counter / 60);
             showText(timeElapsed, 50, 370);
 
-            
         }
-         
         //I've changed winning the game after 60 seconds since it's not that challenging
         if ((counter % 3600) == 0)
         {
@@ -87,12 +83,9 @@ public class Skyline extends World
         }
 
     }
-    
+
     public Score getScore()
     {
         return score;
     }
-    
-    
-
 }
