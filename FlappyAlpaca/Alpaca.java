@@ -12,13 +12,11 @@ public class Alpaca extends Actor
     int g = 1;
     int counter = 0;
 
+
     /**
      * Act - do whatever the Alpaca wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-
-   
-
     public void act()  
     {
         counter = counter + 1; 
@@ -61,17 +59,13 @@ public class Alpaca extends Actor
             //Greenfoot.playSound("2.wav");
         }
 
-        //derivative of y = derivative of y + gravity
-        dy = dy + g;
+        // Only make the alpaca fall after 5 seconds
+        if (counter > 50)
+        {
+            //derivative of y = derivative of y + gravity
+            dy = dy + g;
+        }
     }    
-    
-     public Alpaca()
-    {
-        Greenfoot.setWorld(new Skyline());  
-        Greenfoot.delay(300);
-
-    }
-    
 
     private void displayGameOver () {
         GameOver gameOver = new GameOver();
