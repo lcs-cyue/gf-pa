@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class StartScreen extends World
 { 
-   
+
     /**
      * Constructor for objects of class StartScreen.
      * 
@@ -17,21 +17,25 @@ public class StartScreen extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(800, 600, 1); 
-        
+
         prepare();
-        
     }
-    
+
     public void prepare() 
     {
         Letters titleLetters= new Letters();
         addObject (titleLetters, 400, 300);
     }
-    
+
     public void act()
+    {
+        change();
+    }
+
+    private void change()
     {
         //set the world after pressing enter
         if (Greenfoot.isKeyDown ("enter"))
-        Greenfoot.setWorld(new Skyline());
+            Greenfoot.setWorld(new Skyline());  
     }
 }

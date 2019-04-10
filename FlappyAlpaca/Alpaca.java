@@ -11,16 +11,21 @@ public class Alpaca extends Actor
     int dy = 0;
     int g = 1;
     int counter = 0;
-    
+
     /**
      * Act - do whatever the Alpaca wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    public void act() 
+
+   
+
+    public void act()  
     {
-        counter = counter + 1;
+        counter = counter + 1; 
         // Game over if bumps into a cloud, 
-        if (getOneIntersectingObject (Cloud.class) != null) {
+
+        if (getOneIntersectingObject (Cloud.class) != null) 
+        {
 
             displayGameOver ();
 
@@ -33,6 +38,7 @@ public class Alpaca extends Actor
             dy = -8;
         }
 
+        //gameover if RJ goes out of the boundaries
         if (getY() > getWorld().getHeight() ) {
 
             displayGameOver ();
@@ -44,21 +50,29 @@ public class Alpaca extends Actor
             displayGameOver ();
 
         }
-        
+
+        //score+1 if touching the clover class
         if (isTouching(Clover.class))
         {
             removeTouching(Clover.class);
-            //create counter
             Skyline skyline = (Skyline)getWorld();
             Score score = skyline.getScore();
             score.addScore();
             //Greenfoot.playSound("2.wav");
         }
-   
+
+        //derivative of y = derivative of y + gravity
         dy = dy + g;
     }    
-
     
+     public Alpaca()
+    {
+        Greenfoot.setWorld(new Skyline());  
+        Greenfoot.delay(300);
+
+    }
+    
+
     private void displayGameOver () {
         GameOver gameOver = new GameOver();
         getWorld().addObject(gameOver,400,200);
