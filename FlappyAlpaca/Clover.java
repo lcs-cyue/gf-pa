@@ -14,16 +14,7 @@ public class Clover extends Actor
      * 
      * Runs once
      */
-    Clover()
-    {
-        // Check if touching a cloud
-        
-            // If touching cloud, generate a new position
-            // (OR, just remove the clover)
-            
-        
-    }
-    
+   
     public void act() 
     {
         setLocation (getX()-4, getY());
