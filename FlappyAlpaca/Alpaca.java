@@ -59,8 +59,8 @@ public class Alpaca extends Actor
             //Greenfoot.playSound("2.wav");
         }
 
-        // Only make the alpaca fall after 5 seconds
-        if (counter > 50)
+        // Only make the alpaca fall after 0.5 seconds
+        if (counter > 30)
         {
             //derivative of y = derivative of y + gravity
             dy = dy + g;
